@@ -11,14 +11,11 @@ public class MainFibonacci {
     public static void main(String[] args) {
         int arg = 4;
 
-        int arg1 = 1;
-        int arg2 = 3;
         EOObject stdout = new EOstdout(
                 new EOsprintf(
-                        new EODataObject("%d is %b\n"),
+                        new EODataObject("Factorial of %d is %d\n"),
                         new EODataObject(arg),
-//                        new EOFactorial(new EODataObject(arg))
-                        new EObetween(new EODataObject(arg), new EODataObject(arg1), new EODataObject(arg2))
+                        new EOFactorial(new EODataObject(arg))
                 )
         );
         stdout._getData();

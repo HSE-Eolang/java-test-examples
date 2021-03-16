@@ -14,15 +14,12 @@ public class EOFactorial extends EOObject {
 
     @Override
     public EOData _getData() {
+        System.out.println("n is: " + n._getData().toInt());
         return new EOif(
                 new EOless(n, new EODataObject(2)),
                 new EODataObject(1L),
-                new EOmul(
-                        new EOFactorial(
-                                new EODataObject(new EOsub(n, new EODataObject(1)))
-                        ),
-                        n
-                )
+                new EOmul(n, new EOFactorial(new EOsub(n, new EODataObject(1))))
+
         )._setParent(this)._getData();
     }
 }
