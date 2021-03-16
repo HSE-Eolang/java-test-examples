@@ -4,9 +4,9 @@ import eo.org.eolang.core.EOObject;
 import eo.org.eolang.core.data.EOData;
 
 public class EOFirst extends EOObject {
-    private EOObject arr;
+    private EOObject[] arr;
 
-    public EOFirst(EOObject arr){
+    public EOFirst(EOObject[] arr){
         this.arr = arr;
     }
 
