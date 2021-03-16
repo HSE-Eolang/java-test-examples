@@ -18,7 +18,6 @@ public class EObetween extends EOObject {
 
     @Override
     public EOData _getData() {
-        // bug
         return new EOand(
                 new EOleq(left, x),
                 new EOleq(x, right)

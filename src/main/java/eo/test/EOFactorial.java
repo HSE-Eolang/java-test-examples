@@ -18,10 +18,10 @@ public class EOFactorial extends EOObject {
                 new EOless(n, new EODataObject(2)),
                 new EODataObject(1L),
                 new EOmul(
-                        n,
                         new EOFactorial(
-                                new EOsub(n, new EODataObject(1))
-                        )
+                                new EODataObject(new EOsub(n, new EODataObject(1)))
+                        ),
+                        n
                 )
         )._setParent(this)._getData();
     }
