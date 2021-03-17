@@ -13,8 +13,7 @@ public class EOLeaf extends EOObject {
 
     @Override
     public EOData _getData() {
-        return super._getData();
-        // TO DO
+        return empty._getData();
     }
 
     @Override

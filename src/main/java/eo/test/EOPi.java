@@ -13,7 +13,7 @@ public class EOPi extends EOObject {
 
     @Override
     public EOData _getData() {
-        return super._getData();
+        return pi._getData();
     }
 
     @Override

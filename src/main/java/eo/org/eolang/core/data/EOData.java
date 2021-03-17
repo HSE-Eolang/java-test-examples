@@ -24,7 +24,7 @@ public class EOData {
         return _data;
     }
 
-    public Long toInt() {
+    public Long toLong() {
         if(_data.getClass().equals(Long.class)){
             return (Long)_data;
         }
@@ -32,6 +32,16 @@ public class EOData {
             return Long.valueOf((Integer)_data);
         }
         return 0L;
+    }
+
+    public int toInt() {
+        if(_data.getClass().equals(Long.class)){
+            return (Integer) _data;
+        }
+        if(_data.getClass().equals(Integer.class) ){
+            return Integer.valueOf((Integer)_data);
+        }
+        return 0;
     }
 
     public Boolean toBoolean(){

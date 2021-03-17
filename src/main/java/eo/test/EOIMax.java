@@ -1,13 +1,18 @@
 package eo.test;
 
+import eo.org.eolang.calc.EOequal;
+import eo.org.eolang.calc.EOif;
 import eo.org.eolang.core.EOObject;
+import eo.org.eolang.core.EOObjectArray;
 import eo.org.eolang.core.data.EOData;
 
 public class EOIMax extends EOObject {
-    private EOObject[] arr;
+    private EOObjectArray arr;
+    private EOObject element;
 
-    public EOIMax(EOObject[] arr){
+    public EOIMax(EOObjectArray arr, EOObject element){
         this.arr = arr;
+        this.element = element;
     }
 
     @Override
@@ -15,4 +20,5 @@ public class EOIMax extends EOObject {
         return super._getData();
         // TO DO
     }
+
 }
