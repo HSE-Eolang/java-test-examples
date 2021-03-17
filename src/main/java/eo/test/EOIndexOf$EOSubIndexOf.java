@@ -26,8 +26,9 @@ public class EOIndexOf$EOSubIndexOf extends EOObject {
 
     @Override
     public EOData _getData() {
+        EOObject length = new EOsub(arr.length, new EODataObject(1));
         return new EOif(
-                new EOequal(arr.length, i),
+                new EOequal(length, i),
                 negOne,
                 new EOif(
                         new EOequal(_getAttribute("element"), arr.get(i)),
