@@ -1,3 +1,6 @@
+import eo.org.eolang.calc.EOif;
+import eo.org.eolang.calc.EOleq;
+import eo.org.eolang.calc.EOless;
 import eo.org.eolang.core.EOObjectArray;
 import eo.org.eolang.core.data.EODataObject;
 import eo.org.eolang.core.EOObject;
@@ -7,11 +10,11 @@ import eo.test.*;
 
 public class MainFibonacci {
     public static void main(String[] args) {
-        int arg = 18;
+        int arg = 3;
 
         EOObject stdout = new EOstdout(
                 new EOsprintf(
-                        new EODataObject("Factorial of %d is %b\n"),
+                        new EODataObject("Factorial of %d is %s\n"),
                         new EODataObject(arg),
                         new EOFactorial(new EODataObject(arg))
                 )
