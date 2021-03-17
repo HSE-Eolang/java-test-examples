@@ -14,7 +14,7 @@ public class MainFibonacci {
                 new EOsprintf(
                         new EODataObject("Factorial of %d is %d\n"),
                         new EODataObject(arg),
-                        new EOfactorial(new EODataObject(arg))
+                        new EOFactorial(new EODataObject(arg))
                 )
         );
         stdout._getData();

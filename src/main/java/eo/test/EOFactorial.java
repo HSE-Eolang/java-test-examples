@@ -5,10 +5,10 @@ import eo.org.eolang.core.EOObject;
 import eo.org.eolang.core.data.EOData;
 import eo.org.eolang.core.data.EODataObject;
 
-public class EOfactorial extends EOObject {
+public class EOFactorial extends EOObject {
     private EOObject n;
 
-    public EOfactorial(EOObject n){
+    public EOFactorial(EOObject n){
         this.n = n;
     }
 
@@ -19,7 +19,7 @@ public class EOfactorial extends EOObject {
                 new EODataObject(1L),
                 new EOmul( // stackoverflowerror
                         _getAttribute("n"),
-                        new EOfactorial(
+                        _getAttribute("Factorial",
                                 new EOsub(_getAttribute("n"),
                                         new EODataObject(1))))
 
