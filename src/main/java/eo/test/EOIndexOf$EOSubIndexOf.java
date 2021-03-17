@@ -30,9 +30,9 @@ public class EOIndexOf$EOSubIndexOf extends EOObject {
                 new EOequal(arr.length, i),
                 negOne,
                 new EOif(
-                        new EOequal(element, arr.get(i)),
+                        new EOequal(_getAttribute("element"), arr.get(i)),
                         i,
-                        new EOIndexOf$EOSubIndexOf(arr, element, new EOadd(i, this.one))
+                        _getAttribute("SubIndexOf", arr, _getAttribute("element"), new EOadd(i, this.one))
                 )
         )._setParent(this)._getData();
     }
