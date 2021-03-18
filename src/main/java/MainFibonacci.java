@@ -6,11 +6,11 @@ import eo.test.*;
 
 public class MainFibonacci {
     public static void main(String[] args) {
-        int arg = 3;
+        int arg = 10;
 
         EOObject stdout = new EOstdout(
                 new EOsprintf(
-                        new EODataObject("Factorial of %d is %s\n"),
+                        new EODataObject("Factorial of %d is %d\n"),
                         new EODataObject(arg),
                         new EOFactorial(new EODataObject(arg))
                 )

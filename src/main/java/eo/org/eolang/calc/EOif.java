@@ -3,6 +3,11 @@ package eo.org.eolang.calc;
 import eo.org.eolang.core.data.EOData;
 import eo.org.eolang.core.EOObject;
 
+/**
+ * An object that is an analogue of the if control in other languages.
+ * The free attribute cond (condition) determines which of the objects will be datarized by obj1 or obj2 for
+ * calculating the result of dateization of this object.
+ */
 public class EOif extends EOObject {
     private EOObject cond;
     private EOObject obj1;

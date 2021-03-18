@@ -1,12 +1,21 @@
 package eo.org.eolang.core.data;
 
-public class EOData {
+/**
+ * The object representing the data is the result of dateization in EO.
+ */
+public  class  EOData {
+    /**
+     * Data
+     */
     private Object _data;
 
     public EOData(Object _data){
         this._data = _data;
     }
 
+    /**
+     * Casting data type to string
+     */
     @Override
     public String toString() {
         if(_data.getClass().equals(String.class) ){
@@ -20,10 +29,14 @@ public class EOData {
         }
         return "";
     }
+
     public Object toObject() {
         return _data;
     }
 
+    /**
+     * Casting data type to integer
+     */
     public Long toLong() {
         if(_data.getClass().equals(Long.class)){
             return (Long)_data;
@@ -34,9 +47,12 @@ public class EOData {
         return 0L;
     }
 
+    /**
+     * Casting data type to integer
+     */
     public int toInt() {
         if(_data.getClass().equals(Long.class)){
-            return (Integer) _data;
+            return (Integer)_data;
         }
         if(_data.getClass().equals(Integer.class) ){
             return Integer.valueOf((Integer)_data);
@@ -44,7 +60,10 @@ public class EOData {
         return 0;
     }
 
-    public Boolean toBoolean(){
+    /**
+     * Casting data type to boolean
+     */
+    public  Boolean  toBoolean () {
         if(_data.getClass().equals(Boolean.class) ){
             return (Boolean)_data;
         }
