@@ -1,7 +1,3 @@
-import eo.org.eolang.calc.EOif;
-import eo.org.eolang.calc.EOleq;
-import eo.org.eolang.calc.EOless;
-import eo.org.eolang.core.EOObjectArray;
 import eo.org.eolang.core.data.EODataObject;
 import eo.org.eolang.core.EOObject;
 import eo.org.eolang.io.EOstdout;

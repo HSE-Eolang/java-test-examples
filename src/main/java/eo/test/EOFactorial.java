@@ -11,7 +11,7 @@ public class EOFactorial extends EOObject {
     private EOObject n;
 
     public EOFactorial(EOObject n){
-        this.n = n;
+        this.n = n._setParent(this);
     }
 
     @Override
