@@ -5,7 +5,12 @@ import eo.org.eolang.calc.EOleq;
 import eo.org.eolang.core.EOObject;
 import eo.org.eolang.core.EOObjectArray;
 import eo.org.eolang.core.data.EOData;
+import eo.org.eolang.core.data.EODataObject;
 import eo.org.eolang.txt.EOsprintf;
+
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class EOArrToStrArr extends EOObject {
 
@@ -19,9 +24,9 @@ public class EOArrToStrArr extends EOObject {
 
     @Override
     public EOData _getData() {
-        return new EOsprintf(
-                format,
-                arr
-        )._setParent(this)._getData();
+        // TO DO
+        Stream<Object> strarr = Arrays.stream(arr.get_array())
+                .map(eoObject -> new EOsprintf(format, eoObject));
+        return (EOData) strarr;
     }
 }

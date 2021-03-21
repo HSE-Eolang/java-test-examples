@@ -1,18 +1,20 @@
 package eo.test;
 
+import eo.org.eolang.calc.EOadd;
+import eo.org.eolang.calc.EOif;
 import eo.org.eolang.core.EOObject;
 import eo.org.eolang.core.data.EOData;
 import eo.org.eolang.core.data.EODataObject;
 
 public class EONode extends EOObject {
 
-    private EOObject value;
-    private EOObject left;
-    private EOObject right;
-    private EOObject empty;
+    public EOObject value;
+    public EONode left;
+    public EONode right;
+    public EOObject empty;
 
-    public EONode(EOObject v, EOObject l, EOObject r){
-        this.value = v;
+    public EONode(EOObject v, EONode l, EONode r){
+        this.value = v._setParent(this);
         this.left = l;
         this.right = r;
         this.empty = new EODataObject(false);
@@ -22,6 +24,5 @@ public class EONode extends EOObject {
     @Override
     public EOData _getData() {
         return super._getData();
-        // TO DO
     }
 }

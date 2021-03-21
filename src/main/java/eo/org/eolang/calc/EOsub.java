@@ -16,7 +16,7 @@ public class EOsub extends EOExpressionObject {
         this.val1 = val1._setParent(this);
         this.val2 = val2._setParent(this);
         if(val1._isCalculable() && val2._isCalculable()){
-            _data = new EOData(val1._getData().toInt() - val2._getData().toInt());
+            _data = new EOData(val1._getData().toLong() - val2._getData().toLong());
         }
 
     }
