@@ -1,5 +1,8 @@
 <img src="https://www.yegor256.com/images/books/elegant-objects/cactus.svg" height="100px" />
 
+![image info](./img/1.png)
+
+![image info](./img/2.png)
 # Преобразование EO кода в Jаva
 
 ## Таблица соответствия сущнистей EO с Java
