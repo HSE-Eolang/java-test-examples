@@ -19,7 +19,7 @@ public class MainFibonacci {
         EOObject stdout = new EOstdout(
                 new EOsprintf(
                         new EODataObject("Max of array is %s\n"),
-                        new EOCount(arr, new EODataObject(6))
+                        new EOFactorial(new EODataObject(2))
                 )
         );
         stdout._getData();

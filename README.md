@@ -3,30 +3,30 @@
 ![image info](./img/1.png)
 
 ![image info](./img/2.png)
-# Преобразование EO кода в Jаva
+# Converting EO code to Java
 
-## Таблица соответствия сущнистей EO с Java
+## EO entity mapping table with Java
 
 | EO | Java |
 |:---|:-----|
-| Описание объекта | Класс |
-| Копия объекта | Экземпляр класса |
-| Свободный аттрибут | Поле скласса |
-| Датаризация объекта | Вызов метода _getData() |
+| Description of the object | Class |
+| Object copy | Instance of class |
+| Free attribute | Class field |
+| Object dataization | Calling the _getData () method |
 
-### Комментарии
- * Значения свободных аттрибутов устанавливаются через конструктор класса
+### Comments (1)
+ * The values of free attributes are set through the class constructor
 
-## Сравнение работы кода текущего компилятора с предлагаемым
+## Comparison of the work of the code of the current compiler with the proposed
 
-### Код компилятора
+### Compiler code
 30th Fibonacci number is 832040
 
 real    1m8,963s<br>
 user    1m9,882s<br>
 sys     0m1,391s<br>
 
-### Предложенный код
+### Suggested Code
 50th Fibonacci number is 12586269025
 
 
