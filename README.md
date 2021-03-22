@@ -3,31 +3,39 @@
 ![image info](./img/1.png)
 
 ![image info](./img/2.png)
-# Converting EO code to Java
+# EO to Java Transpiling Model
 
-## EO entity mapping table with Java
+## Basic Runtime Classes
 
-| EO | Java |
+| Class | Description    |
 |:---|:-----|
-| Description of the object | Class |
-| Object copy | Instance of class |
-| Free attribute | Class field |
-| Object dataization | Calling the _getData () method |
+| EOObject | Has three main objectives: 1.Instantiate an EO object (i.e. make a copy of it via a constructor) 2.Dataize an EO object 3.Set a parent object 4.Access attributes of an object |
+| EOData | Used to store data primitives. |
+| EODataObject | A wrapper class to interpret EOData as EOObject |
+| EONoData | A primitive class representing the absence of data |
 
-### Comments (1)
- * The values of free attributes are set through the class constructor
+## Mapping EO Entities to Java Code Structures
 
-## Comparison of the work of the code of the current compiler with the proposed
+| EO | Java    |
+|:---|:-----|
+| Abstraction (introduction of a conceptually new object) | A plain old Java class extending EOObject |
+| Application (object copying) | Creating a new class instance |
+| A free attribute | A class field that should be sat via the constructor |
+| A bound attribute | A separate class with the following naming pattern EObase$EOattr |
+| Duck typing | Everything is EOObject. Class fields are accessed via Java Reflection |
+| Object dataization | 	Calling _getData() |
 
-### Compiler code
-30th Fibonacci number is 832040
+### Performance Metrics
+ * The solution being proposed is ~17x faster and more efficient.
 
-real    1m8,963s<br>
-user    1m9,882s<br>
-sys     0m1,391s<br>
+### The Current (CQFN) Implementation
 
-### Suggested Code
-50th Fibonacci number is 12586269025
+30th Fibonacci number is 832040 real 1m8,963s
+user 1m9,882s
+sys 0m1,391s
+
+### The Approach being Proposed
+50th Fibonacci number is 12586269025 real 0m0,430s user 0m0,652s sys 0m0,065s
 
 
 real    0m0,109s<br>
