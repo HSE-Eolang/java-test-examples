@@ -10,17 +10,19 @@ public class MainFibonacci {
         long arg = 31;
         EOObjectArray arr = new EOObjectArray(
                 new EODataObject(72),
+                new EODataObject(1),
                 new EODataObject(12),
+                new EODataObject(-19),
                 new EODataObject(80),
-                new EODataObject(11),
-                new EODataObject(1)
+                new EODataObject(11)
+
         );
 
 
         EOObject stdout = new EOstdout(
                 new EOsprintf(
-                        new EODataObject("Max of array is %s\n"),
-                        new EOMax(arr)
+                        new EODataObject("Min of array is %s\n"),
+                        new EOMin(arr)
                 )
         );
         stdout._getData();
