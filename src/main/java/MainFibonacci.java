@@ -18,13 +18,13 @@ public class MainFibonacci {
                 new EODataObject(80)
 
         );
-        EODataObject element = new EODataObject(111);
+        EODataObject element = new EODataObject(-19);
 
         EOObject stdout = new EOstdout(
                 new EOsprintf(
-                        new EODataObject("NUmber of %d is %d\n"),
+                        new EODataObject("%d is found at index %d\n"),
                         element,
-                        new EOCount(arr, element)
+                        new EOFindIndex(arr, element)
                 )
         );
         stdout._getData();
