@@ -11,15 +11,16 @@ public class MainFibonacci {
         EOObjectArray arr = new EOObjectArray(
                 new EODataObject(72),
                 new EODataObject(12),
-                new EODataObject(6),
-                new EODataObject(11)
+                new EODataObject(80),
+                new EODataObject(11),
+                new EODataObject(1)
         );
 
 
         EOObject stdout = new EOstdout(
                 new EOsprintf(
                         new EODataObject("Max of array is %s\n"),
-                        new EOFactorial(new EODataObject(2))
+                        new EOMax(arr)
                 )
         );
         stdout._getData();
