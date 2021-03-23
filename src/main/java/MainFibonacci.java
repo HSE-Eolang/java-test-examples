@@ -14,15 +14,17 @@ public class MainFibonacci {
                 new EODataObject(12),
                 new EODataObject(-19),
                 new EODataObject(80),
-                new EODataObject(11)
+                new EODataObject(11),
+                new EODataObject(80)
 
         );
-
+        EODataObject element = new EODataObject(111);
 
         EOObject stdout = new EOstdout(
                 new EOsprintf(
-                        new EODataObject("Min of array is %s\n"),
-                        new EOMin(arr)
+                        new EODataObject("NUmber of %d is %d\n"),
+                        element,
+                        new EOCount(arr, element)
                 )
         );
         stdout._getData();

@@ -8,32 +8,31 @@ import eo.org.eolang.core.EOObjectArray;
 import eo.org.eolang.core.data.EOData;
 import eo.org.eolang.core.data.EODataObject;
 
-import java.util.Arrays;
-import java.util.Optional;
+import java.util.stream.Stream;
 
 public class EOCount extends EOObject {
 
     private EOObjectArray arr;
     private EOObject element;
-    private EODataObject identity;
 
     public EOCount(EOObjectArray arr, EOObject element){
 
         this.arr = arr;
         this.element = element._setParent(this);
-        identity = new EODataObject(0);
     }
 
     @Override
     public EOData _getData() {
-        Optional<EOObject> count = Optional.ofNullable(Arrays.stream(arr.get_array())
+        EOObject count = Stream.of(arr.get_array())
                 .reduce(new EODataObject(0), (result, current) ->
-                        new EOif(
-                                new EOequal(current, element),
-                                identity,
-                                new EOadd(identity, new EODataObject(1))
+                        new EODataObject(
+                                new EOif(
+                                        new EOequal(current, element),
+                                        new EOadd(result, new EODataObject(1)),
+                                        new EOadd(result, new EODataObject(0))
+                                )._getData()
                         )
-                ));
-        return count.get()._setParent(this)._getData();
+                );
+        return count._setParent(this)._getData();
     }
 }
